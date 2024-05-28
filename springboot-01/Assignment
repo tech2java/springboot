@@ -1,0 +1,21 @@
+Create a spring boot application which should handle below
+
+1. Create MVC Controller
+2. Create REST Controller
+3. Use RequestBody, ResponseBody, Requestentity, ResponseEntity annotations
+4. Implement Bean validations(Hint:Use @Validated, @Valid and pattern)
+5. Implement GlobalExceptionHandling(note:  handle both Controller & RestController exceptions)
+6. Use Lombok library for removal of boilerplate code
+7. Use @Slf4j annotation for logging
+8. API should handle both xml and json responses
+9. Use random port number to run multiple app instances .
+10.Implement the content filter(Hint: @JsonIgnore,@JsonProperty)
+11.Use H2 database for CRUD operations(use spring data for operations)(Hint:schema.sq and data.sql)
+12.Migrate to MySQL 
+13.Implement spring DATA derived query methods(hint: introducer & criteria clause)
+14.Add support for auditing(Hint: createdBy,CreatedAt,updatedBy,updatedAt)
+15.Use custom queries(Hint: @Query,@NamedQuery,@NamedNativeQuery & JPQL)
+16.Implement communication b/n two rest services(RestTemplate,OpenFeign ,WebClient)
+16.Implement profiling (hint: @ConfigurationProperties)
+17.Leverage HAL explorer
+18.expose Actuator endpoints
