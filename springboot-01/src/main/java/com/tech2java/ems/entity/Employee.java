@@ -11,6 +11,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @Entity
+@NamedQuery(name="Employee.retrieveEmployeeByName",query = "SELECT e from Employee e where empName=?1")
+
+@NamedNativeQuery(name = "Employee.retrieveEmployeeByNameNative" ,query = "SELECT *FROM employee where emp_name=:name",resultClass = Employee.class)
 @Table(name = "employee")
 public class Employee extends BaseEntity{
 

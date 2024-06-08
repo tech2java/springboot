@@ -102,3 +102,41 @@ public class BaseEntity {
     private LocalDateTime updatedAt;
 }
 `
+
+Custom Queries with JPA:
+-----------------------
+- Derived queries are good as long as they are not complex.
+- @Query, @NamedQuery and @NamedNativeQuery- can write own queries
+- @query- can write queries in the form of **JPQL** and **Native** SQL queries.
+- @NamedQuery - used to define a **JPQL** named query
+- @NamedNativeQuery - used to define a **native SQL** named query.
+
+JPQL:
+-----
+- Java Persistence query Language
+- It is a Platform-independent object-oriented query language defined in the Java Persistence API(JPA) specification.
+- JPQL uses entity and field names instead of table and column names.
+
+
+`
+
+    //Positional parameters
+    @Query("SELECT e from Employee e where empName=?1")
+    public Employee retrieveEmployeeByName(String name);
+
+
+    //named parameters
+    @Query("SELECT e from Employee e where empName=:name")
+    public Employee retrieveEmployeeByName2(@Param("name") String name);
+
+
+    //Native query
+    @Query(value = "SELECT *FROM employee where emp_name=:name",nativeQuery = true)
+    public Employee retrieveEmployeeByNameNative(@Param("name") String name);
+`
+
+- Using **@Query** , we can also run UPDATE,DELETE , INSERT as well.
+- For updates, use **@Modifying** and **@Transaction** for transaction management
+- @NamedQuery- should match => method name in repository & query name
+- @NamedNativeQuery-  should match => method name in repository & query name and add **@Query(nativeQuery=true)** on top of method.
+- @NamedQueries , @NamedNativeQueries => for **multiple queries**
